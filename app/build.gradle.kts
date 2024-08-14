@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.playsService)
 }
 
 android {
@@ -45,7 +44,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.13"
     }
     packaging {
         resources {
@@ -100,6 +99,13 @@ dependencies {
 
     //timber
     implementation(libs.timber)
+
+    //camerax
+    implementation(libs.bundles.camerax)
+
+
+    //cloudinary-android
+    implementation(libs.cloudinary)
     
     //splash
     implementation(libs.androidx.core.splashscreen)

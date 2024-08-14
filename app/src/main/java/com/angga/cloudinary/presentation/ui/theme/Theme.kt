@@ -1,4 +1,4 @@
-package com.angga.cloudinary.ui.theme
+package com.angga.cloudinary.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

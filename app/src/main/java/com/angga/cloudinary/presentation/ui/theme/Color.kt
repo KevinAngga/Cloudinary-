@@ -1,4 +1,4 @@
-package com.angga.cloudinary.ui.theme
+package com.angga.cloudinary.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
