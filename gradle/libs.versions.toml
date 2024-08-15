@@ -26,6 +26,7 @@ composeAnimation = "1.7.0-alpha07"
 coreSplashscreen = "1.0.1"
 cameraX = "1.3.4"
 cloudinary = "2.8.0"
+lottie = "6.4.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -73,6 +74,7 @@ camerax-video = { group="androidx.camera", name="camera-video", version.ref="cam
 camerax-view = { group="androidx.camera", name="camera-view", version.ref="cameraX"}
 camerax-extensions = { group="androidx.camera", name="camera-extensions", version.ref="cameraX"}
 cloudinary = { group="com.cloudinary", name="cloudinary-android", version.ref="cloudinary"}
+lottie = { module = "com.airbnb.android:lottie-compose", version.ref = "lottie"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

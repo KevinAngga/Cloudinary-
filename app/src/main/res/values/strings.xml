@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Cloudinary</string>
+    <string name="processing">Processing Upload</string>
+    <string name="loading_1">Loading up the fun…</string>
+    <string name="loading_2">Hold your horses...</string>
+    <string name="loading_3">Almost cooked...</string>
+    <string name="loading_4">Just a sec...</string>
+    <string name="loading_5">Stay groovy...</string>
+    <string name="upload_video">Upload Video</string>
+
+    <!-- Error Handel -->>
+    <string name="error_unknown">An unknown error occured.</string>
+    <string name="error_files_size">File Size has reach Limit</string>
+    <string name="error_insufficient_storage">Failed to save the item because your disk is full</string>
+    <string name="error_invalid_output">Error invalid output options</string>
+    <string name="error_encoding_failed">Error encoding failed</string>
+    <string name="error_recorder_error">Error recorder error</string>
+    <string name="error_no_valid_data">Error data is not valid</string>
+    <string name="error_source_inactive">Error source inactive</string>
+    <string name="error_file_not_exist">Error given file doesn\'t exsist</string>
+    <string name="error_no_internet">Couldn\'t reach server. please check you internet</string>
 </resources>

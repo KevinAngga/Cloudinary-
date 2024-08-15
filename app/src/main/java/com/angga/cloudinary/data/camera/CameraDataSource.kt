@@ -50,7 +50,8 @@ class CameraDataSource @Inject constructor(
                         recording?.close()
                         trySend(Result.Failed(handleCameraError(event.error)))
                     } else {
-                        trySend(Result.Success(event.outputResults.outputUri))
+                        val outputUri = event.outputResults.outputUri
+                        trySend(Result.Success(outputUri))
                     }
 
                     close()
@@ -60,7 +61,7 @@ class CameraDataSource @Inject constructor(
 
         // Await close from the caller side
         awaitClose {
-            recording?.close()
+            stopRecording()
         }
     }
 

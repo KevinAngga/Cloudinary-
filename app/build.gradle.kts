@@ -110,6 +110,9 @@ dependencies {
     //splash
     implementation(libs.androidx.core.splashscreen)
 
+    //lottie
+    implementation(libs.lottie)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

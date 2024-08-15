@@ -16,7 +16,6 @@ sealed interface DataError : Error {
     enum class Uploader : DataError {
         UNKNOWN,
         NETWORK_ERROR,
-        FILE_DOES_NOT_EXIST,
-        URI_DOES_NOT_EXIST
+        FILE_DOES_NOT_EXIST
     }
 }
