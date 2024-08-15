@@ -11,7 +11,6 @@ import androidx.camera.view.LifecycleCameraController
 import androidx.camera.view.video.AudioConfig
 import androidx.core.content.ContextCompat
 import com.angga.cloudinary.data.utils.handleCameraError
-import com.angga.cloudinary.domain.model.Video
 import com.angga.cloudinary.domain.utils.DataError
 import com.angga.cloudinary.domain.utils.Result
 import kotlinx.coroutines.channels.awaitClose

@@ -15,10 +15,8 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideVideoCaptureRepository(
-        cameraDataSource: CameraDataSource
-    ): VideoCaptureRepository  {
-        return VideoCaptureRepositoryImpl(cameraDataSource = cameraDataSource)
+    fun provideVideoCaptureRepository(): VideoCaptureRepository  {
+        return VideoCaptureRepositoryImpl()
     }
 
 }

@@ -1,4 +1,4 @@
-package com.angga.cloudinary.presentation
+package com.angga.cloudinary.presentation.video
 
 import android.net.Uri
 

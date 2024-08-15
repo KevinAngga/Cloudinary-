@@ -11,4 +11,12 @@ sealed interface DataError : Error {
         NO_VALID_DATA,
         SOURCE_INACTIVE
     }
+
+
+    enum class Uploader : DataError {
+        UNKNOWN,
+        NETWORK_ERROR,
+        FILE_DOES_NOT_EXIST,
+        URI_DOES_NOT_EXIST
+    }
 }
