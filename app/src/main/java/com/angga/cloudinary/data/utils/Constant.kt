@@ -8,4 +8,6 @@ object Constant {
     const val PUBLIC_ID = "public_id"
     const val ALLOWED_CHAR = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
     const val SEPARATOR = ""
+    const val CONNECT_TIMEOUT = "connect_timeout"
+    const val READ_TIMEOUT = "read_timeout"
 }

@@ -1,4 +1,4 @@
-package com.angga.cloudinary.presentation.video
+package com.angga.cloudinary.presentation.ui.video
 
 import androidx.camera.core.CameraSelector
 import androidx.compose.runtime.getValue
@@ -36,7 +36,11 @@ class VideoViewModel @Inject constructor(
             VideoAction.OnStopClick -> { stopUploadVideo() }
             VideoAction.OnUploadClick -> { uploadVideo() }
             VideoAction.OnChangeCameraClick -> { changeCamera() }
-
+            is VideoAction.OnCheckPermission -> {
+                state = state.copy(
+                    hasAllPermission = action.hasAllPermission
+                )
+            }
         }
     }
 
@@ -106,6 +110,7 @@ class VideoViewModel @Inject constructor(
                             isFinishUpload = true
                         )
                         clearUpState()
+                        eventChanel.send(VideoEvent.Success)
                     }
                 }
             }

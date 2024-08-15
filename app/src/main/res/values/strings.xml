@@ -7,6 +7,8 @@
     <string name="loading_4">Just a sec...</string>
     <string name="loading_5">Stay groovy...</string>
     <string name="upload_video">Upload Video</string>
+    <string name="cancel">Cancel</string>
+    <string name="upload_video_done">Video has been upload successfully</string>
 
     <!-- Error Handel -->>
     <string name="error_unknown">An unknown error occured.</string>
@@ -19,4 +21,5 @@
     <string name="error_source_inactive">Error source inactive</string>
     <string name="error_file_not_exist">Error given file doesn\'t exsist</string>
     <string name="error_no_internet">Couldn\'t reach server. please check you internet</string>
+    <string name="denied_permission">You are about to use app with camera and audio, how come you denied the permission? Please turn it on from settings</string>
 </resources>

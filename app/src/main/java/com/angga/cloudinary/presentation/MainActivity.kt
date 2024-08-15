@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.angga.cloudinary.presentation.ui.theme.CloudinaryTheme
-import com.angga.cloudinary.presentation.video.VideoScreenRoot
+import com.angga.cloudinary.presentation.ui.video.VideoScreenRoot
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

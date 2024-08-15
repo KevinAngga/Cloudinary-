@@ -2,6 +2,8 @@ package com.angga.cloudinary.di
 
 import android.content.Context
 import com.angga.cloudinary.data.camera.CameraDataSource
+import com.angga.cloudinary.data.repository.NetworkRepositoryImpl
+import com.angga.cloudinary.domain.repository.NetworkRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

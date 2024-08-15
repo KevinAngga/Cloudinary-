@@ -1,10 +1,11 @@
-package com.angga.cloudinary.presentation.video
+package com.angga.cloudinary.presentation.ui.video
 
 import android.Manifest
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.view.LifecycleCameraController
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,16 +19,21 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.angga.cloudinary.R
 import com.angga.cloudinary.presentation.components.CameraPreview
+import com.angga.cloudinary.presentation.components.DeniedPermission
 import com.angga.cloudinary.presentation.components.FlipCameraIcon
 import com.angga.cloudinary.presentation.components.UploadLoadingDialog
 import com.angga.cloudinary.presentation.ui.theme.CloudinaryTheme
@@ -48,6 +54,13 @@ fun VideoScreenRoot(viewModel: VideoViewModel = hiltViewModel()) {
                     Toast.LENGTH_LONG
                 ).show()
             }
+
+            VideoEvent.Success -> {
+                Toast.makeText(
+                    context,R.string.upload_video_done,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
     }
 
@@ -64,16 +77,15 @@ private fun VideoScreen(
     cameraController: LifecycleCameraController?,
     onAction: (VideoAction) -> Unit,
 ) {
-    val context = LocalContext.current
     val permissionLauncher =
         rememberLauncherForActivityResult(contract = ActivityResultContracts.RequestMultiplePermissions()) { grantedMap ->
             val allGranted = grantedMap.values.all { it }
             if (allGranted) {
                 // Permission is granted
-                Toast.makeText(context, "Permission Granted", Toast.LENGTH_LONG).show()
+                onAction(VideoAction.OnCheckPermission(hasAllPermission = true))
             } else {
                 // Permission is denied
-                Toast.makeText(context, "Permission Denied", Toast.LENGTH_LONG).show()
+                onAction(VideoAction.OnCheckPermission(hasAllPermission = false))
             }
         }
 
@@ -91,6 +103,10 @@ private fun VideoScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
+        if (!state.hasAllPermission) {
+            DeniedPermission(modifier = Modifier.fillMaxSize())
+        }
 
         Column(
             modifier = Modifier
@@ -115,7 +131,7 @@ private fun VideoScreen(
                     Button(
                         modifier = Modifier.fillMaxWidth(),
                         onClick = { onAction(VideoAction.OnStopClick) }) {
-                        Text(text = "cancel")
+                        Text(text = stringResource(id = R.string.cancel))
                     }
                 }
             )
@@ -144,7 +160,7 @@ private fun VideoScreen(
                 IconButton(onClick = { onAction(VideoAction.OnChangeCameraClick) }) {
                     Icon(
                         imageVector = FlipCameraIcon,
-                        contentDescription = ""
+                        contentDescription = "flip"
                     )
                 }
             }
